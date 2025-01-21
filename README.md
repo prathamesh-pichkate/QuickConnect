@@ -37,8 +37,7 @@ Ensure you have the following installed:
 ### Installation Steps
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   [git clone <repository-url>](https://github.com/prathamesh-pichkate/QuickConnect/edit/main/README.md)
    ```
 
 2. **Install Dependencies**:
