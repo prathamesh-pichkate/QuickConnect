@@ -37,13 +37,14 @@ Ensure you have the following installed:
 ### Installation Steps
 1. **Clone the Repository**:
    ```bash
-   [git clone <repository-url>](https://github.com/prathamesh-pichkate/QuickConnect/edit/main/README.md)
+   https://github.com/prathamesh-pichkate/QuickConnect.git
    ```
 
 2. **Install Dependencies**:
    ```bash
+   cd frontend
    npm install
-   cd client
+   cd backend
    npm install
    ```
 
@@ -56,7 +57,6 @@ Ensure you have the following installed:
      CLOUDINARY_API_KEY=your_cloudinary_api_key
      CLOUDINARY_API_SECRET=your_cloudinary_api_secret
      JWT_SECRET=your_jwt_secret
-     SOCKET_PORT=your_socket_io_port
      PORT=your_server_port
      ```
 
@@ -67,26 +67,13 @@ Ensure you have the following installed:
 
 5. **Run the Client**:
    ```bash
-   cd client
-   npm start
+   cd frontend
+   npm run dev
    ```
 
 6. **Access the Application**:
    - Open your browser and navigate to `http://localhost:<PORT>`.
 
-## Key Components
-### Backend Setup
-- **Authentication Routes**:
-  - Signup: `POST /api/auth/signup`
-  - Login: `POST /api/auth/login`
-  - Logout: `POST /api/auth/logout`
-  - Update Profile: `PUT /api/auth/update`
-- **Message Routes**:
-  - Send Message: `POST /api/messages`
-  - Get Messages: `GET /api/messages/:conversationId`
-
-### Database Setup
-- MongoDB collections for users, messages, and conversations.
 
 ### Frontend Pages
 - **Signup & Login Pages**: Collect user credentials and authenticate.
