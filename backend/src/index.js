@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json({ limit: "10mb" })); //allow to extract the data from the body
 app.use(cookieParser()); //helps to parse the cookie data
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.listen(PORT, () =>{
     console.log(`Server is running on port ${PORT}` );
