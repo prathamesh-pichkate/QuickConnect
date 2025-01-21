@@ -7,18 +7,59 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build directories
+dist/
+dist-ssr/
+build/
+public/build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files and caches
+*.tmp
+*.temp
+.cache/
+.vite/
+.next/
+out/
+
+# Coverage files
+coverage/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Operating System specific files
+Thumbs.db
+ehthumbs.db
+*.Spotlight-V100
+.AppleDouble
+.LSOverride
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Docker
+docker-compose.override.yml
+
+# Miscellaneous
+*.bak
+*.pid
+*.seed
+*.pid.lock
