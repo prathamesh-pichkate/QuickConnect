@@ -13,10 +13,18 @@ import { app,server } from './lib/socket.js';
 const PORT  = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
+const allowedOrigins = [
+  "http://localhost:5173", // Local development
+  "http://43.204.230.179:5173" // AWS EC2 frontend IP
+];
+
 app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true
-}))
+  origin: allowedOrigins,
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 app.use(express.json({ limit: "10mb" })); //allow to extract the data from the body
 app.use(cookieParser()); //helps to parse the cookie data
 app.use("/api/auth", authRoutes);
