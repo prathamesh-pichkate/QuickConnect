@@ -15,15 +15,23 @@ const __dirname = path.resolve();
 
 const allowedOrigins = [
   "http://localhost:5173", // Local development
-  "http://43.204.230.179:5173" // AWS EC2 frontend IP
-];
+  process.env.FRONTEND_URL, // Load from .env
+].filter(Boolean);
+
 
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Allows cookies & authentication headers
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 
 app.use(express.json({ limit: "10mb" })); //allow to extract the data from the body
 app.use(cookieParser()); //helps to parse the cookie data
